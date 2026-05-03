@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+option java_package = "com.sistemasdistribuidos.grpc.proto";
+option java_multiple_files = true;
+
+service WeatherService {
+
+  rpc ObterTemperatura (CidadeRequest) returns (TemperaturaResponse);
+
+  rpc PrevisaoCincoDias (CidadeRequest) returns (PrevisaoResponse);
+
+  rpc ListarCidades (Empty) returns (ListaCidadesResponse);
+
+  rpc CadastrarCidade (CadastrarCidadeRequest) returns (MensagemResponse);
+
+  rpc EstatisticasClimaticas (CidadeRequest) returns (EstatisticasResponse);
+}
+
+// ===== MESSAGES =====
+
+message Empty {}
+
+message CidadeRequest {
+  string nome = 1;
+}
+
+message CadastrarCidadeRequest {
+  string nome = 1;
+  double temperatura = 2;
+}
+
+message TemperaturaResponse {
+  string cidade = 1;
+  double temperatura = 2;
+}
+
+message Previsao {
+  string dia = 1;
+  double temperatura = 2;
+}
+
+message PrevisaoResponse {
+  repeated Previsao previsoes = 1;
+}
+
+message ListaCidadesResponse {
+  repeated string cidades = 1;
+}
+
+message EstatisticasResponse {
+  double media = 1;
+  double minima = 2;
+  double maxima = 3;
+}
+
+message MensagemResponse {
+  string mensagem = 1;
+}
