@@ -86,5 +86,9 @@ Embora o programador chame um método simples, o fluxo interno utiliza o protoco
 5. **Resposta**: O resultado é serializado e enviado de volta pelo mesmo túnel HTTP/2.
 
 🖼️ Sistema em Funcionamento
+![1](./fotos/img.png)
+![1](./fotos/img_1.png)
+![1](./fotos/img_2.png)
+![1](./fotos/img_3.png)
 
 Desenvolvido por Jorge Araujo
